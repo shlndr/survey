@@ -1,0 +1,174 @@
+<?xml version="1.0" ?>
+<template xmlns="http://schemas.sulu.io/template/template"
+          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xsi:schemaLocation="http://schemas.sulu.io/template/template http://schemas.sulu.io/template/template-1.0.xsd">
+
+    <key>default</key>
+
+    <view>pages/default</view>
+    <controller>Sulu\Bundle\WebsiteBundle\Controller\DefaultController::indexAction</controller>
+    <cacheLifetime>604800</cacheLifetime>
+
+    <meta>
+        <title lang="en">Default</title>
+        <title lang="de">Standard</title>
+    </meta>
+
+    <properties>
+        <property name="available" type="checkbox">
+            <params>
+                <param name="type" value="toggler"/>
+                <param name="default_value" value="false"/>
+                <param name="label">
+                    <meta>
+                        <title lang="en">Enable</title>
+                    </meta>
+                </param>
+            </params>
+        </property>
+
+        <property name="title" type="text_line" mandatory="true">
+            <meta>
+                <title lang="en">Title</title>
+                <title lang="de">Titel</title>
+            </meta>
+            <params>
+                <param name="headline" value="true"/>
+            </params>
+
+            <tag name="sulu.rlp.part"/>
+        </property>
+
+        <property name="url" type="resource_locator" mandatory="true">
+            <meta>
+                <title lang="en">Resourcelocator</title>
+            </meta>
+
+            <tag name="sulu.rlp"/>
+        </property>
+
+        
+        <property name="headerImage" type="single_media_selection" colspan="6"  mandatory="true">
+            <meta>
+                <title lang="en">Image</title>
+                <title lang="de">Bild</title>
+            </meta>
+
+            <params>
+                <param name="types" value="image"/>
+            </params>
+        </property>
+
+        <property name="chartImage" type="single_media_selection" colspan="6">
+            <meta>
+                <title lang="en">chart</title>
+                <title lang="de">Bild</title>
+            </meta>
+
+            <params>
+                <param name="types" value="image"/>
+            </params>
+        </property>
+
+
+        <property name="article" type="text_editor">
+            <meta>
+                <title lang="en">Question</title>
+            </meta>
+        </property>
+
+        <property name="excerpt" type="text_editor">
+            <meta>
+                <title lang="en">Excerpt</title>
+            </meta>
+        </property>
+
+        <block name="blocks" default-type="editor_image" minOccurs="1">
+            <meta>
+                <title lang="en">Options</title>
+            </meta>
+            <types>
+                <type name="editor_image">
+                    <meta>
+                        <title lang="en">Option</title>
+                    </meta>
+                    <properties>
+                        <property name="optionLabel" type="text_line" colspan="6">
+                                   <meta>
+                                       <title lang="en">Option Label</title>
+                                   </meta>
+                               </property>
+
+                               <property name="optionType" type="single_select" mandatory="true" colspan="6">
+                                   <meta>
+                                       <title lang="en">Select Type</title>
+                                   </meta>
+
+                                   <params>
+                                       <param name="default_value" value="option1"/>
+
+                                       <param name="values" type="collection">
+                                           <param name="radio">
+                                               <meta>
+                                                   <title lang="en">Radio</title>
+                                               </meta>
+                                           </param>
+
+                                           <param name="checkbox">
+                                               <meta>
+                                                   <title lang="en">Checkbox</title>
+                                               </meta>
+                                           </param>
+
+                                           <param name="others">
+                                               <meta>
+                                                   <title lang="en">Others</title>
+                                               </meta>
+                                           </param>
+                                       </param>
+                                   </params>
+                               </property>
+                    </properties>
+                </type>
+            </types>
+        </block>
+
+        <property name="insightTitle" type="text_line">
+            <meta>
+                <title lang="en">Insight Title</title>
+            </meta>
+            <params>
+                <param name="insightHeadline" value="true"/>
+            </params>
+
+            <tag name="sulu.rlp.part"/>
+        </property>
+
+        <property name="insight" type="text_editor"> 
+            <meta>
+                <title lang="en">Insight</title>
+                <title lang="de">Artikel</title>
+            </meta>
+        </property>
+
+                <property name="pages" type="smart_content">
+                    <meta>
+                        <title lang="en">Smart Content</title>
+                    </meta>
+
+                    <params>
+                        <param name="provider" value="pages"/>
+                        <param name="includeSubFolders" value="true"/>
+                        <param name="max_per_page" value="5"/>
+                        <param name="page"/>
+                        <param name="properties" type="collection">
+                            <param name="sortBy" value="Published on"/>
+                            <param name="sortMethod" value="DESC"/>
+                            <param name="chartImage" value="chartImage"/>
+                            <param name="insight" value="insight"/>
+                        </param>
+                    </params>
+                </property>
+
+    </properties>
+</template>

@@ -1,0 +1,43 @@
+{% extends "base.html.twig" %}
+
+{% block content %}
+
+<section class="sect-list">
+	<div class="list-wrapper">
+	<div class="container">
+
+{% for element in content.pages %}
+
+	<div class="list-item">
+		{% if element.headerImage %}
+			<aside><img src="{{ asset(element.headerImage.url) }}" alt=""></aside>
+		{% endif %}
+		    <article>
+			  <h3>{{ element.title }} </h3>
+			  <p>{{ element.excerpt|raw }}</p>
+					   
+			  <a href="{{ element.url }}" class="orangebtn0">VIEW</a>
+			</article>
+	</div>
+
+{% endfor %}
+       
+	</div>
+	</div>
+
+	<div id="pagination-container" class="light-theme simple-pagination">
+		<ul class="pagination">
+
+		    {% set page = view.pages.page %}
+
+		    {% if page-1 >= 1 %}
+		        <li><a href="{{ sulu_content_path(content.url) }}?page={{ page-1 }}">&laquo;</a></li>
+		    {% endif %}
+		    {% if view.pages.hasNextPage %}
+		        <li><a href="{{ sulu_content_path(content.url) }}?page={{ page+1 }}">&raquo;</a></li>
+		    {% endif %}
+		</ul>
+	</div>
+
+</section>
+{% endblock %}

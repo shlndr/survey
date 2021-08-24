@@ -1,0 +1,239 @@
+{% extends "base.html.twig" %}
+
+{% block content %}
+    <section class="middle-sect">
+    		  <div class="container">
+    			 <div class="left-site">
+                    {% if content.available == true and content.blocks[0].optionLabel != "" %}
+    			    {% if content.headerImage %}
+    			   <div class="l-box"><img src="{{ asset(content.headerImage.url) }}" alt=""></div>
+                   {% endif %}
+                   {% endif %}
+    			   <div class="r-box">
+    				  <h3>{{ content.title }} </h3>
+
+                      {% if content.article %}
+    				   <span> {{ content.article|raw }}</span>
+                       {% endif %}
+    {% if content.available == true and content.blocks[0].optionLabel != "" %}
+       <form name="surveyForm" id="surveyForm">
+        <input type="hidden" name="surveyTitle" value="{{ content.title }}">
+        <input type="hidden" name="surveyUrl" value="{{ content.url }}">
+        <input type="hidden" name="emailId" value="">
+        <input type="hidden" name="utmSource" value="">
+        <input type="hidden" name="utmMedium" value="">
+        <input type="hidden" name="utmCampaign" value="">
+        <input type="hidden" name="utmTerm" value="">
+        <input type="hidden" name="utmContent" value="">
+      {% set surveOptions = "" %}
+      {% for option in content.blocks %}
+            {% set surveOptions = surveOptions  ~ ',' ~ option.optionLabel %}
+          <p>
+          {% if option.optionType != 'others' and option.optionLabel != "" %}
+            <input type="{{ option.optionType }}" id="{{ option.optionLabel }}" name="options" value="{{ option.optionLabel }}">
+          {% elseif option.optionType == 'others' %}
+            <input type="{{ content.blocks[0].optionType }}" id="other" name="options" value="others">
+          {% endif %}
+            <label for="{{ option.optionLabel }}">{{ option.optionLabel }}</label>
+          </p>
+      {% endfor %}
+
+        <input type="hidden" name="surveyOptions" value="{{ surveOptions }}">
+        <p class="error"></p>	  
+        <p class="others" style="display: none;">
+            <input type="text" name="others">
+        </p>
+    			  
+    	<p><button class="orangebtn0" id="submit" type="button" value="submit" onclick="return validateEvent()">Submit</button></p>	  
+    			  
+    </form>
+    {% endif %}
+
+    				 </div>
+
+                     
+        {% set snippets = sulu_snippet_load_by_area('default') %}          
+
+    	{% if content.available == false and content.chartImage and content.insight %}
+    	<div class="mark-box">
+    		 <!-- <h3>Last Week Result</h3> -->
+    		<!-- <p>Here’s a look at last week’s results where we asked users about their usage of LinkedIn for professional networking</p>	 -->
+
+    		{% if content.chartImage %}
+            <div style="text-align: center;">
+        		<img src="{{ content.chartImage.url }}" alt="diagram">		   
+            </div>
+    		{% endif %}
+    	</div>
+    				 
+    				 
+    	<h4>We got some interesting results here.</h4>
+        {{ content.insight|raw }}
+        {% else %}
+            <div>
+                <div class="mark-box">
+                     <h3>Last Week Result</h3>
+                    <p>Here’s a look at last week’s results where we asked users about their usage of LinkedIn for professional networking</p> 
+                    {% if snippets.content.pages[1] %}
+                    <div style="text-align: center;">
+                        {% if snippets.content.pages[1].chartImage %}
+                        <img src="{{ snippets.content.pages[1].chartImage.url }}" alt="diagram">         
+                        {% endif %}
+                    </div>
+                    {% endif %}
+                </div>
+     
+                <h4>We got some interesting results here.</h4>
+                {{ snippets.content.pages[1].insight|raw }}
+            </div>
+    	{% endif %}	 
+    			  </div>
+    			  
+    			 <div class="right-site">
+    			    <ul>
+                        {% for element in snippets.content.pages %}
+    				   <li><a href="{{ element.url }}">{{ element.title }}</a></li>
+                       {% endfor %}
+    				 </ul>
+    			   
+    			 <a href="/" class="orangebtn0">VIEW ALL SURVEY</a>
+    			  
+    			  </div>
+    			</div>
+    		
+    		
+    		
+    		</section>
+
+            <div id="popup1" class="popup">
+            <span class="popup1_close cls_btn"></span>
+              <div class="table">
+                <div class="rt0 lgn-popup"><h4>Thank you for participating in our survey. </h4>
+                      <p>If you wish you receive the surveys through email and get timely updates<br> about the results, subscribe here</p>
+                    <button id="" value="Subscribe Now" class="orangebtn1">Subscribe Now</button>
+                    <span class="close popup1_close bg-close"></span>
+                </div>
+                  
+                </div>
+
+            </div>
+
+            <div id="popup2" class="popup">
+            <span class="popup2_close cls_btn"></span>
+              <div class="table">
+                <div class="rt0 lgn-popup"><h4>You have already submitted your response.</h4>
+                      <p>If you wish you receive the surveys through email and get timely updates<br> about the results, subscribe here</p>
+                    <button id="" value="Subscribe Now" class="orangebtn1">Subscribe Now</button>
+                    <span class="close popup1_close bg-close"></span>
+                </div>
+                  
+                </div>
+
+            </div>
+
+{% endblock %}
+
+{% block javascripts %}
+<script src="https://cdn.jsdelivr.net/npm/js-cookie@beta/dist/js.cookie.min.js"></script>
+<script>
+   $('#popup1').popup({
+  pagecontainer: '#page',
+  escape: false
+});
+
+      $('#popup2').popup({
+     pagecontainer: '#page',
+     escape: false
+   });
+  </script> 
+<script type="text/javascript">
+        $(document).ready(function() {
+            $('input:radio').change(function() {
+               
+               if($(this).val()=="Other")
+                {
+                $('.others').slideToggle('slow');
+                }
+                else{
+                $('.others').hide('300');
+                }
+            });
+        });
+</script>
+<script type="text/javascript">
+    $(document).ready(function(){
+            function getParameterByName(name) {
+                name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
+                var regex = new RegExp("[\\?&]" + name + "=([^&#]*)"),
+                    results = regex.exec(location.search);
+                return results === null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
+            }
+
+            // Give the URL parameters variable names
+            var source = getParameterByName('utm_source');
+            var medium = getParameterByName('utm_medium');
+            var campaign = getParameterByName('utm_campaign');
+            var content = getParameterByName('utm_content');
+            var term = getParameterByName('utm_term');
+            var u = getParameterByName('u');
+            // Put the variable names into the hidden fields in the form.
+            $("input[name='utmSource']").val(source);
+            $("input[name='utmMedium']").val(medium);
+            $("input[name='utmCampaign']").val(campaign);
+            $("input[name='utmContent']").val(content);
+            $("input[name='utmTerm']").val(term);
+            $("input[name='emailId']").val(u);
+    });
+
+    function validateEvent()
+    {
+
+        var formName = "surveyForm";
+        document.querySelectorAll('.error').forEach(function(a){
+        a.innerHTML = "";
+        })
+        var options = document.forms[formName]["options"];
+        var error = false;
+
+        if (options.value == "")
+        {
+            $('.error').html('Please select an option');
+            error= true;
+            // return false;
+        }
+
+       
+        if(error == false)
+        {
+            document.getElementById('submit').innerHTML = '<i class="fa fa-spinner fa-spin"></i>';
+            var form = document.querySelector('form');
+            var data = new FormData(form);
+            var req = new XMLHttpRequest();
+            req.onreadystatechange = function() {
+                if (req.readyState == XMLHttpRequest.DONE) {
+                    // console.log(response);
+                    // alert(req.responseText);
+                    if(req.responseText == "success")
+                    {
+                        Cookies.set('survey', '{{ content.url }}');
+                        $('#popup1').popup('show');
+                    }else if(req.responseText == "already"){
+                        $('#popup2').popup('show');
+
+                    }
+                    document.getElementById('submit').innerHTML = "SUBMIT";
+                    // var response = JSON.parse(req.responseText);
+                    // console.log(response.status);
+                    // if(response.status == "success"){console.log('show popup');}
+                }
+            }
+            req.open("POST", "/save-form");
+            req.send(data);
+
+        }
+
+        return true;
+    }
+</script>
+
+{% endblock %}

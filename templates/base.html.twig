@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="{{ app.request.locale|split('_')[0] }}">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Logicserve Digital- Survery listing </title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="{{ asset('/build/website/css/normalize.min.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ asset('/build/website/css/font-awesome.min.css') }}" />
+    <link rel="stylesheet" type="text/css" href="{{ asset('/build/website/css/style.css') }}" />
+    
+    <link rel="stylesheet" type="text/css" href="{{ asset('/build/website/css/media.css') }}" />
+    <link href="https://fonts.googleapis.com/css?family=Rubik:400,500,700" rel="stylesheet">
+   
+    <link href="https://fonts.googleapis.com/css?family=Rubik:400,500,700" rel="stylesheet">
+    <link rel="stylesheet" href="{{ asset('/build/website/css/mobile-menu.css') }}" type="text/css">
+
+ 
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script> 
+    <script src="{{ asset('/build/website/js/vendor/modernizr-2.8.3-respond-1.4.2.min.js') }}"></script>
+
+
+    {% block meta %}
+        {% include "@SuluWebsite/Extension/seo.html.twig" with {
+            "seo": extension.seo|default([]),
+            "content": content|default([]),
+            "urls": urls|default([]),
+            "shadowBaseLocale": shadowBaseLocale|default(),
+            "defaultLocale": app.request.locale
+        } %}
+    {% endblock %}
+
+    {% block style %}{% endblock %}
+</head>
+<body>
+    <header>
+        <div class="top-header">
+                    <div class="container">
+                        <ul class="links"><li>              
+                            <a href="#" target="_blank" >Blogs</a>
+                            <a href="#">Careers</a>
+
+                            <a href="#">contact us</a>
+                            </li></ul>
+                        
+                        <span class="clr"></span>
+                        
+                    </div>
+                </div>
+                <div class="container navbg">
+                    <div class="logo">
+                        <a href="https://www.logicserve.com/"><img src="https://www.logicserve.com/images/logo.jpg" alt=""></a>
+                    </div>
+                <nav class="nav">
+               
+                    <ul class="desk-nav">
+                      <li class="actnv sub">
+                                            <a href="JavaScript:void(0);" class="arr">Digital Marketing </a>
+                            <ul class="mega-menu">
+                                <li>
+                                    <ul>
+                                        <li>
+                                            <p class="ttl">SEM</p>
+
+                                            <a href="https://www.logicserve.com/adwords-management/" >Adwords Management</a>
+                                            <a href="https://www.logicserve.com/google-adwords-services/google-adwords-audit/" >Google Adwords Audit</a>
+                                            
+                                            <a href="#" >Paid Listing Ads Management</a>
+                                            <a href="https://www.logicserve.com/paid-search-marketing/">Paid Search Marketing</a>
+                                        </li>
+                                        <li>
+                                            <p class="ttl">SEO</p>
+                                            <a href="https://www.logicserve.com/seo-services/" >SEO Services</a>
+                                            <a href="https://www.logicserve.com/seo-services/seo-audit/" >Website SEO Audit</a>
+                                            <a href="https://www.logicserve.com/seo-services/on-page-optimization/" >On- Page Optimization</a>
+                                            <a href="https://www.logicserve.com/seo-services/off-page-optimization/" >Off-Page Optimization</a>
+                                            <a href="https://www.logicserve.com/website-migration-seo/">Website Migration SEO</a>
+                                            <!--<a href="#">Backlink Analysis & Recommendations</a>-->
+                                        </li>
+                                        <li>
+                                            <p class="ttl">PROGRAMMATIC </p>
+                                            <a href="https://www.logicserve.com/programmatic-advertising-service/">Programmatic Advertising</a>
+                                            <a href="https://www.logicserve.com/programmatic-media-buying/">Programmatic Media Buying</a>
+                                            <a href="https://www.logicserve.com/programmatic-offerings/">Programmatic Offerings</a>
+                                            
+                                        </li>
+                                    </ul>
+
+                                    <ul>
+                                        <li>
+                                            <p class="ttl">AMAZON MARKETING SERVICES </p>
+                                            <a href="https://www.logicserve.com/amazon-marketing-services/" >Amazon Marketing Platform Management</a>
+                                            <a href="https://www.logicserve.com/ams-audit/" >AMS Audit</a>
+                                            
+                                        </li>
+                                        <li>
+                                            <p class="ttl">CREATIVE & COMMUNICATION SERVICES</p>
+                                            <a href="https://www.logicserve.com/creative-advertising-service/">Creative Advertising</a>
+                                        </li>
+                                        <li>
+                                            
+                                        </li>
+                                    </ul>
+
+                                    <ul>
+                                        <li class="sub">
+                                            <a href="https://www.logicserve.com/social-media-marketing-service/"  class="ttl">SOCIAL MEDIA CAMPAIGN MANAGEMENT</a>
+                                        </li>
+                                        <li class="sub">
+                                            <a href="https://www.logicserve.com/content-management-service/" class="ttl">CONTENT MANAGEMENT</a>
+                                            
+                                        </li>
+                                        <li class="sub">
+                                            <a href="https://www.logicserve.com/mobile-advertising-service/" class="ttl">Mobile Advertising</a>
+                                            
+                                        </li>
+                                        <li class="sub">
+                                            <a href="https://www.logicserve.com/video-advertising-service/" class="ttl">Video Advertising</a>
+                                            
+                                        </li>
+                                        <li class="sub">
+                                            <a href="https://www.logicserve.com/google-analytics-service/" class="ttl">Google Analytics </a>
+                                            <ul>
+                                                
+                                            </ul>
+                                        </li>
+                                        
+                                    </ul>
+                                </li>
+                          </ul>
+                      </li>
+                      <!-- mega-menu end  -->
+                      <li class="sub">
+                            <a href="JavaScript:void(0);" class="arr">Digital Consulting</a>
+                            <ul class="mega-menu">
+                                <li>
+                                    <ul>
+                                        <li class="sub">
+                                            <a href="https://www.logicserve.com/digital-assessment-and-strategy-recommendations/" class="ttl">Digital Assessment & Strategy Recommendation</a>
+                                        </li>
+                                        <li class="sub">
+                                            <a href="https://www.logicserve.com/center-of-digital-excellence/" class="ttl">Center of Excellence</a>
+                                        </li>
+                                    </ul>
+
+                                    <ul>
+                                        <li class="sub">
+                                            <a href="https://www.logicserve.com/media-mix-consulting/" class="ttl">Media Mix Consulting</a>
+                                        </li>
+                                    </ul>
+                                    <ul>
+                                        <li class="sub">
+                                            <a href="https://www.logicserve.com/data-infrastructure-assessment/" class="ttl">Data Infrastructure Assessment</a>
+                                        </li>
+                                    </ul>
+                                </li>
+                          </ul>
+                      </li>
+                      
+                      <li ><a href="JavaScript:void(0);" >Industries</a></li>
+                        <li><a href="JavaScript:void(0);" >Insights</a></li>
+                        <li><a href="JavaScript:void(0);" >About Logicserve</a></li>
+                    </ul>
+                    <ul class="call">
+                        <li><span> Call us:</span> <a href="tel:02241146159" class="mbl">022-41146159</a><p class="dsk"> <a href="tel:02241146159" class="dsk">022- 41146159</a></p></li>
+                    </ul>
+
+                </nav>
+
+                            <div class="mblmenu">
+                                <div id="dl-menu" class="dl-menuwrapper">
+                                    <a href="#" class="threeline dl-trigger"><span></span></a>
+                                    <ul class="dl-menu">
+                                        <li>
+                                            <a href="#">Digital Marketing</a>
+                                            <ul class="dl-submenu">
+                                                <li>
+                                                    <a href="#">SEM</a>
+                                                    <ul class="dl-submenu">
+                                                        <li><a href="https://www.logicserve.com/adwords-management/" >Adwords Management</a></li>
+                                                        
+                                                        <li><a href="https://www.logicserve.com/google-adwords-services/google-adwords-audit/" >Google Adwords Audit</a></li>
+                                                        
+                                                        <li><a href="https://www.logicserve.com/pla-management/" >Paid Listing Ads Management</a></li>
+                                                        <li><a href="https://www.logicserve.com/paid-search-marketing/" >Paid Search Marketing</a></li>
+                                                    </ul>
+                                                </li>
+                                                <li>
+                                                    <a href="#">SEO</a>
+                                                    <ul class="dl-submenu">
+                                                        <li><a href="https://www.logicserve.com/seo-services/" >SEO Services</a></li>
+                                                        <li><a href="https://www.logicserve.com/seo-services/seo-audit/" >Website SEO Audit</a></li>
+                                                        <li><a href="https://www.logicserve.com/seo-services/on-page-optimization/" >On- Page Optimization</a></li>
+                                                        <li><a href="https://www.logicserve.com/seo-services/off-page-optimization/" >Off-Page Optimization</a></li>
+                                                        <li><a href="https://www.logicserve.com/website-migration-seo/" >Website Migration SEO</a></li>
+                                                        <!--<a href="#">Backlink Analysis & Recommendations</a>-->
+                                                    </ul>
+                                                </li>
+                                                <li>
+                                                    <a href="#">PROGRAMMATIC</a>
+                                                    <ul class="dl-submenu">
+
+                                                        <li><a href="https://www.logicserve.com/programmatic-advertising-service/" >Programmatic Advertising</a></li>
+                                                        <li><a href="https://www.logicserve.com/programmatic-media-buying/" >Programmatic Media Buying</a></li>
+                                                        <li><a href="https://www.logicserve.com/programmatic-offerings/" >Programmatic Offerings</a></li>
+                                                        
+                                                    </ul>
+                                                </li>
+                                                <li>
+                                                    <a href="#">AMAZON MARKETING SERVICES</a>
+                                                    <ul class="dl-submenu">
+                                                        <li><a href="https://www.logicserve.com/amazon-marketing-services/" >Amazon Marketing Platform Management</a></li>
+                                                        <li><a href="https://www.logicserve.com/ams-audit/" >AMS Audit</a></li>
+                                                        <!--<a href="#">Amazon Marketing Platform Audit</a>-->
+                                                    </ul>
+                                                </li>
+                                                <li>
+                                                    <a href="#">CREATIVE & COMMUNICATION SERVICES</a>
+                                                    <ul class="dl-submenu">
+                                                        <li><a href="https://www.logicserve.com/creative-advertising-service/" >Creative Advertising</a></li>
+                                                    </ul>
+                                                </li>
+                                                <li>
+                                                    <a href="#">PROGRAMMATIC</a>
+                                                </li>
+                                                <li>
+                                                    <a href="https://www.logicserve.com/social-media-marketing-service/" >SOCIAL MEDIA CAMPAIGN MANAGEMENT</a>
+                                                </li>
+                                                <li>
+                                                    <a href="https://www.logicserve.com/content-management-service/" >CONTENT MANAGEMENT</a>
+                                                </li>
+                                                <li>
+                                                    <a href="https://www.logicserve.com/mobile-advertising-service/" >Mobile Advertising</a>
+                                                </li>
+                                                <li>
+                                                    <a href="https://www.logicserve.com/video-advertising-service/"  >Video Advertising</a>
+                                                </li>
+                                                <li>
+                                                    <a href="https://www.logicserve.com/google-analytics-service/"  >Google Analytics</a>
+                                                </li>
+
+                                            </ul>
+                                        </li>
+                                        
+                                        <li>
+                                            <a href="#">Digital Consulting</a>
+                                            <ul class="dl-submenu">
+                                            <li>
+                                                <a href="https://www.logicserve.com/digital-assessment-and-strategy-recommendations/" >Digital Assessment & Strategy Recommendation</a>
+                                            </li>
+                                            <li>
+                                                <a href="https://www.logicserve.com/center-of-digital-excellence/" >Center of Excellence</a>
+                                            </li>
+                                            <li>
+                                                <a href="https://www.logicserve.com/media-mix-consulting/" >Media Mix Consulting</a>
+                                            </li>
+                                            <li><a href="https://www.logicserve.com/data-infrastructure-assessment/" >Data Infrastructure Assessment</a></li>
+                                        </ul>
+                                        </li>
+                                        
+                                        <li><a href="#">Industries</a></li>
+                                        <li><a href="#">Insights</a></li>
+                                        
+                                        <li>
+                                            <a href="#">About Logicserve</a>
+                                            
+                                        </li>
+                                        
+                                        
+                                        
+                                        
+
+                                    </ul>
+                                </div></div></div>
+    </header>
+
+<!--     <form action="{{ path('sulu_search.website_search') }}" method="GET">
+        <input name="q" type="text" placeholder="Search"/>
+        <input type="submit" value="Go"/>
+    </form> -->
+    <div class="clear"> </div>      
+            
+            
+            
+
+    <div class="clear"></div>
+            
+    <section class="">
+        <div class="innrhead">
+        <div class="container">
+             <h2>Logicserve <strong>Survey</strong></h2>
+        
+        </div></div>
+    </section>
+
+        {% block content %}{% endblock %}
+
+    <aside>
+        {% block aside %}{% endblock %}
+    </aside>
+
+    <footer>
+        {% block footer %}
+            <div class="container">
+                    <div class="linksec">
+
+                        <div class="stay-up">
+                            <b> Stay Updated</b>
+                            <span>Latest Digital Marketing Trends</span>
+                            
+                            <form method="post" id="mytrack" action="#" onsubmit="validateEmail()" data-parsley-validate novalidate>
+                            <p><input type="text" name="email" id="email" style="height: 37px;border-radius: 7px; color:black;" placeholder="email address" data-parsley-required-message="Please enter a valid email id" required />
+                            <p><input type="hidden" name="subject" value="Subscribed from Logicserve website" /></p><br/>
+                            <input type="submit" value="Sign-Up" name="submit" class="orangebtn"></p>
+
+
+                        </form>
+                        </div>
+                        <div class="quicall">
+                            <em>Quick call back</em>
+                            <p>Want to have a quick, no obligation chat with <br>one of our experts?</p>
+                            <a href="https://www.logicserve.com/contact-us/" class="callme" onclick="dataLayer.push({ event:'Please Call Me',eventCategory:'Please Call Me',eventAction:'https://www.logicserve.com/',eventLabel:'https://www.logicserve.com/contact-us/'})">Please call Me</a>
+                        </div>
+                        <div class="quilnk">
+                            <p>Quick links</p>
+                            <nav>
+                            <a href="https://www.logicserve.com/adwords-management/" onclick="dataLayer.push({ event:'Quick Links Footer',eventCategory:'Quick Links',eventAction:'Digital Marketing',eventLabel:'https://www.logicserve.com/adwords-management/'})">Digital Marketing</a>
+                            <a href="https://www.logicserve.com/logicserve-adtech-martech/" onclick="dataLayer.push({ event:'Quick Links Footer',eventCategory:'Quick Links',eventAction:'Digital Consulting',eventLabel:'https://www.logicserve.com/logicserve-adtech-martech/'})">Digital Consulting</a>
+                            <!-- <a href="#">Industries</a> -->
+                            <!-- <a href="#">Insights</a> -->
+                            <a href="https://www.logicserve.com/about-us/" onclick="dataLayer.push({ event:'Quick Links Footer',eventCategory:'Quick Links',eventAction:'About Logicserve',eventLabel:'https://www.logicserve.com/about-us/'})">About Logicserve</a>
+                            <!-- <a href="#">Careers</a> -->
+                            <a href="https://www.logicserve.com/blog/" target="_blank" onclick="dataLayer.push({ event:'Quick Links Footer',eventCategory:'Quick Links',eventAction:'Blogs',eventLabel:'https://www.logicserve.com/blog/'})">Blogs </a>
+                            <!-- <a href="#">Press Releases</a> -->
+                            <a href="https://www.logicserve.com/news/" onClick="dataLayer.push({ event:'Quick Links Footer',eventCategory:'Quick Links',eventAction:'News',eventLabel:'https://www.logicserve.com/news/'})">News</a>
+                            </nav>
+                        </div>
+                    </div>
+            <div class="lcn">
+                <dl>
+                    <dt>Mumbai</dt>
+                    <dd>Logicserve Digital Pvt. Ltd.<br> B-201, 601 & 701, Technocity, <br>
+                        Plot No. X-4/1 and X-4/2, Mahape,<br>
+                        Navi Mumbai, Maharashtra 400701<br>
+                        Contact No.- <a href="tel:02241146159" class="mbl">022 - 41146159</a> <p class="dsk">022 - 41146159</p> </dd>
+                </dl>
+                <dl>
+                    <dt>Delhi</dt>
+                    <dd>Logicserve Digital Pvt. Ltd.<br>
+                        246, Blue One Square, Phase IV,<br>
+                        Udyog Vihar Sector 19,<br>
+                        Gurugram, Haryana 122016<br>
+                        Contact No.- <a href="tel:+919833272083" class="mbl">+91 9833272083</a><p class="dsk">+91 9833272083</p></dd>
+                </dl>
+
+                <dl>
+                    <dt>Bengaluru</dt>
+                    <dd>Logicserve Digital Pvt. Ltd.<br> 78, Salarpuria Magnificia,<br> Beside Tin factory, Old Madras Road,<br> Mahadevpura, Bengaluru 560016 <br>
+                        Contact No.- <a href="tel:+919731403311" class="mbl">+91 9731403311</a><p class="dsk">+91 9731403311</p>
+                    </dd>
+                </dl>
+                
+            </div>
+            <div class="copyright">
+                <div class="copy">
+                    <p>Copyright © 2019 - All Right Reserved </p> 
+                </div>
+                <div class="social-btns">
+                    <a target="_blank" href="https://www.logicserve.com/blog/"><i class="fa fa-rss"></i></a>
+
+                    <a target="_blank" rel="nofollow" href="https://www.linkedin.com/company/logicserve-digital"><i class="fa fa-linkedin"></i></a>
+                    <a target="_blank" rel="nofollow" href="https://twitter.com/logic_digital"><i class="fa fa-twitter"></i></a>
+
+                    <a target="_blank" rel="nofollow" href="https://www.facebook.com/LogicserveDigital"><i class="fa fa-facebook"></i></a>
+              </div>
+            </div>
+
+            </div>
+        {% endblock %}
+    </footer>
+
+    <script src="{{ asset('/build/website/js/jquery.popupoverlay.js') }}"></script>
+    <script src="{{ asset('/build/website/js/jquery.dlmenu.js') }}"></script>
+        
+    <script>
+        $(function() {
+            $( '#dl-menu' ).dlmenu();
+        });
+    </script>
+
+
+
+    <script type="text/javascript">
+      $('.rt-close').click( function(){
+          $('#mobile-video')[0].pause();
+      })
+    </script>
+        
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/simplePagination.js/1.6/jquery.simplePagination.js"></script>
+    <!-- <script  src="{# asset('/build/website/js/script.js') #}"></script> -->
+        
+        
+
+    {% block javascripts %}{% endblock %}
+
+</body>
+</html>

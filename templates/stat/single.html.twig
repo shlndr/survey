@@ -1,0 +1,52 @@
+{# extends 'base.html.twig' #}
+
+{% block title %}Statistics!{% endblock %}
+
+{% block body %}
+<style>
+    .example-wrapper { margin: 1em auto; width: 95%; font: 18px/1.5 sans-serif; }
+    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
+    .example-wrapper{border:1px solid #e1e0e0;font-size: 14px; font-family: Arial;color: #000}
+    .example-wrapper td{padding: 10px;border:1px solid #e1e0e0}
+    .example-wrapper table{width: 100%;border-collapse: collapse;}
+    .example-wrapper {
+       margin: 1em auto;
+       /*max-width: 800px;*/
+       width: 95%;
+       font: 18px/1.5 sans-serif;
+       border: 1px solid #a5a5a5;
+       /* padding: 10px; */
+    }
+</style>
+
+<div class="example-wrapper">
+
+<table>
+	<tr>
+		<td>Title</td>
+		<td>URL</td>
+		<td>Survey Options</td>
+    <td>Option Selected</td>
+    <td>UTM Source</td>
+    <td>UTM Medium</td>
+    <td>UTM Campaign</td>
+    <td>UTM Term</td>
+    <td>UTM Content</td>
+	</tr>
+	{% for stat in stats %}
+		<tr>
+			<td>{{ stat.surveyTitle }}</td>
+			<td>{{ stat.surveyUrl }}</td>
+      <td>{{ stat.surveyOption }}</td>
+      <td>{{ stat.surveyOptionSelected }}</td>
+      <td>{{ stat.utmSource }}</td>
+      <td>{{ stat.utmMedium }}</td>
+      <td>{{ stat.utmCampaign }}</td>
+      <td>{{ stat.utmTerm }}</td>
+      <td>{{ stat.utmContent }}</td>
+		</tr>
+	{% endfor %}
+</table>
+    
+</div>
+{% endblock %}
